@@ -1,5 +1,4 @@
 # INBIO Ontology
-[![DOI:<your number>](http://img.shields.io/badge/DOI-<your number>-<colour hexcode>.svg)](<doi link>)
 
 This repository is used to summarize and report the methodology and results of "INBIO: An Ontology for Argumentation in Invasion
 Biology". This study will be submitted to  23rd International Conference on Knowledge Engineering and Knowledge Management (EKAW2022) (https://ekaw2022.inf.unibz.it/): Poster and Demo track.
