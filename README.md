@@ -14,8 +14,8 @@ This repository includes almost the material related to the development of the I
 * Original hypotheses; this foloder includes the source set of [twelves hypotheses](https://github.com/fusion-jena/INBIO/tree/main/original%20hypotheses) as well as a number of hand crafted trial to develop the ontology
 * OntologyTerms; this folder includes the set of extracted terms from the input hypotheses along with the set of ontologies from [BioPortal](http://bioportal.bioontology.org/) containing these terms.
 
-* The code folder has the [termSerach]([https://github.com/fusionjena/HoH_Core_Ontology/tree/master/code/code%20python%20search%20terms](https://github.com/fusion-jena/INBIO/tree/main/code)) source code used to lookup which ontologies from BioPortal containing the set of terms as well as the [module extractor]([https://github.com/fusion-jena/HoH_Core_Ontology/tree/master/code/ModuleExtractor](https://github.com/fusion-jena/INBIO/tree/main/code/ModuleExtractor))  used to extract a module from the the selected ontology 
-* The preliminary outcome of the ontology deveoplemnt is stored in the [ontology]([https://github.com/fusion-jena/HoH_Core_Ontology/tree/master/ontologyHoH](https://github.com/fusion-jena/INBIO/tree/main/ontology)) folder.
+* The code folder has the [termSerach]([https://github.com/fusionjena/HoH_Core_Ontology/tree/master/code/code%20python%20search%20terms](https://github.com/fusion-jena/INBIO/tree/main/code)) source code used to lookup which ontologies from BioPortal containing the set of terms as well as the [module extractor](https://github.com/fusion-jena/INBIO/tree/main/code/ModuleExtractor))  used to extract a module from the the selected ontology 
+* The preliminary outcome of the ontology deveoplemnt is stored in the [ontology](https://github.com/fusion-jena/INBIO/tree/main/ontology) folder.
 # Usage
 
 Acknowledgments: This work has been funded by the Deutsche Forschungsgemeinschaft (DFG), Project number 455913229
