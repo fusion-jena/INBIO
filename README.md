@@ -18,6 +18,6 @@ This repository includes almost the material related to the development of the I
 
 * The code folder has the [termSerach]([https://github.com/fusionjena/HoH_Core_Ontology/tree/master/code/code%20python%20search%20terms](https://github.com/fusion-jena/INBIO/tree/main/code)) source code used to lookup which ontologies from BioPortal containing the set of terms as well as the [module extractor](https://github.com/fusion-jena/INBIO/tree/main/code/ModuleExtractor))  used to extract a module from the the selected ontology 
 * The preliminary outcome of the ontology deveoplemnt is stored in the [ontology](https://github.com/fusion-jena/INBIO/tree/main/ontology) folder.
-# Usage
+# Usage 
 
 Acknowledgments: This work has been funded by the Deutsche Forschungsgemeinschaft (DFG), Project number 455913229
