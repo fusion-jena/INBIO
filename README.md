@@ -18,4 +18,4 @@ This repository includes almost the material related to the development of the I
 * The preliminary outcome of the ontology deveoplemnt is stored in the [ontologHoH](https://github.com/fusion-jena/HoH_Core_Ontology/tree/master/ontologyHoH) folder.
 # Usage
 
-Acknowledgments: This work has been funded by the \emph{Deutsche Forschungsgemeinschaft (DFG)}, Projectnumber 455913229
+Acknowledgments: This work has been funded by the Deutsche Forschungsgemeinschaft (DFG), Project number 455913229
