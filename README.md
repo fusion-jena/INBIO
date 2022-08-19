@@ -4,7 +4,7 @@ This repository is used to summarize and report the methodology and results of "
 Biology". This study will be submitted to  23rd International Conference on Knowledge Engineering and Knowledge Management (EKAW2022) (https://ekaw2022.inf.unibz.it/): Poster and Demo track.
 
 In [INAS project](https://inas-argumentation.github.io/), we aim to develop an argumentation machine that supports the end users (especially young scientists) during the argumentation process in the invasion biology domain. To this end, 
-we focus on a particular phase of scientific argumentation process, namely the development of claims (hypotheses). A core step to achieve this goal is the formal and semantic representation of claim statements (hypotheses). The \textit{INBIO} ontology is considered a first outcome. In this poster paper, we introduce the overview design and description of the new ontology
+we focus on a particular phase of scientific argumentation process, namely the development of claims (hypotheses). A core step to achieve this goal is the formal and semantic representation of claim statements (hypotheses). The INBIO ontology is considered a first outcome. In this poster paper, we introduce the overview design and description of the new ontology
 
 <!-- # Paper availability -->
 <!-- The accepted version can be accesed vis the [publisher web site](if it get accepted)-->
