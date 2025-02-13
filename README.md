@@ -1,6 +1,6 @@
 # INBIO Ontology
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6826848.svg)](https://doi.org/10.5281/zenodo.6826848)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14864244.svg)](https://doi.org/10.5281/zenodo.14864244).
 
 This repository is used to summarize and report the methodology and results of "INBIO: An Ontology for Argumentation in Invasion
 Biology". This study will be submitted to  23rd International Conference on Knowledge Engineering and Knowledge Management (EKAW2022) (https://ekaw2022.inf.unibz.it/): Poster and Demo track.
