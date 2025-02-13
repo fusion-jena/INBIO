@@ -7,13 +7,15 @@
 @base <https://w3id.org/inbio#> .
 
 <https://w3id.org/inbio> rdf:type owl:Ontology ;
-                          owl:versionIRI <https://w3id.org/inbio/1.1> ;
+                          owl:versionIRI <https://w3id.org/inbio/1.2.0> ;
                           <http://creativecommons.org/ns#license> "https://creativecommons.org/licenses/by-nc-sa/4.0/" ;
                           <http://purl.org/dc/elements/1.1/contributor> """Birgitta König-Ries
 birgitta.koenig-ries@uni-jena.de""" ;
                           <http://purl.org/dc/elements/1.1/source> "https://creativecommons.org/licenses/by-nc-sa/4.0/" ;
                           <http://purl.org/dc/elements/1.1/title> "Invasion Biology Ontology" ;
-                          <http://purl.org/dc/terms/creator> """Alsayed Algergawy
+                          <http://purl.org/dc/terms/creator> """ Hrishikesh Jadhav
+jadhav02@ads.uni-passau.de""" ,
+                                                             """Alsayed Algergawy
 alsayed.algergawy@uni-jena.de""" ,
                                                              """Merle Gänßinger
 merle.gaenssinger@uni-jena.de""" ,
@@ -22,8 +24,8 @@ t.heger@tum.de""" ;
                           <http://purl.org/dc/terms/license> "https://creativecommons.org/licenses/by-nc-sa/4.0/" ;
                           <http://schema.org/license> "https://creativecommons.org/licenses/by-nc-sa/4.0/" ;
                           rdfs:comment "The Invasion Biology Ontology (INBIO) contains terms and concepts relevant in the field of invasion biology, which is a research area dealing with the translocation, establishment, spread, impact and management of species outside of their native ranges, where they are called non-native or alien species. This first version of the ontology covers terms and concepts needed to describe twelve major invasion hypotheses building the hierarchical hypothesis network (see also Jeschke JM, Heger T (Eds) (2018) Invasion Biology: Hypotheses and Evidence. CABI, Wallingford, UK)." ;
-                          owl:priorVersion 1.0 ;
-                          owl:versionInfo 1.1 .
+                          owl:priorVersion 1.1 ;
+                          owl:versionInfo 1.2.0 .
 
 #################################################################
 #    Annotation properties
@@ -204,6 +206,10 @@ t.heger@tum.de""" ;
 rdfs:comment rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2000/01/rdf-schema#domain
+rdfs:domain rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2000/01/rdf-schema#label
 rdfs:label rdf:type owl:AnnotationProperty .
 
@@ -220,24 +226,12 @@ owl:deprecated rdf:type owl:AnnotationProperty .
 <http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
 
 
-###  https://w3id.org/inbio#_000130
-:_000130 rdf:type owl:AnnotationProperty .
-
-
 ###  https://w3id.org/inbio#_000131
-:_000131 rdf:type owl:AnnotationProperty ;
-         rdfs:comment "concepts that should not be used.\\nConcept might be deleted in the next version."@en ;
-         rdfs:label "don't use concept"@en .
-
-
-###  https://w3id.org/inbio#_000132
-:_000132 rdf:type owl:AnnotationProperty .
+:_000131 rdf:type owl:AnnotationProperty .
 
 
 ###  https://w3id.org/inbio#_000133
-:_000133 rdf:type owl:AnnotationProperty ;
-         rdfs:comment "Update ontology regarding the annotations"@en ;
-         rdfs:label "TODO"@en .
+:_000133 rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -405,7 +399,6 @@ owl:deprecated rdf:type owl:AnnotationProperty .
                                                                     ] ;
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ;
                                              owl:inverseOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                             rdf:type owl:TransitiveProperty ;
                                              <http://purl.obolibrary.org/obo/IAO_0000116> "Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other."@en ,
                                                                                           "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime"@en ,
                                                                                           """Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
@@ -423,7 +416,6 @@ A continuant cannot be part of an occurrent: use 'participates in'. An occurrent
 ###  http://purl.obolibrary.org/obo/BFO_0000051
 <http://purl.obolibrary.org/obo/BFO_0000051> rdf:type owl:ObjectProperty ;
                                              rdfs:subPropertyOf <http://purl.obolibrary.org/obo/RO_0002131> ;
-                                             rdf:type owl:TransitiveProperty ;
                                              <http://purl.obolibrary.org/obo/IAO_0000116> "Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part."@en ,
                                                                                           "Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime"@en ,
                                                                                           """Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)
@@ -493,8 +485,7 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
                                              <http://purl.obolibrary.org/obo/IAO_0000111> "has measurement unit label"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A relation between a value specification and its unit of measurement." ;
                                              <http://purl.obolibrary.org/obo/IAO_0000412> "http://purl.obolibrary.org/obo/obi.owl" ;
-                                             rdfs:label "has measurement unit label"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "has measurement unit label"@en .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0000056
@@ -582,7 +573,6 @@ A continuant cannot have an occurrent as part: use 'participates in'. An occurre
 ###  http://purl.obolibrary.org/obo/RO_0001015
 <http://purl.obolibrary.org/obo/RO_0001015> rdf:type owl:ObjectProperty ;
                                             owl:inverseOf <http://purl.obolibrary.org/obo/RO_0001025> ;
-                                            rdf:type owl:TransitiveProperty ;
                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000004> ;
                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000004> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000116> "Most location relations will only hold at certain times, but this is difficult to specify in OWL. See https://code.google.com/p/obo-relations/wiki/ROAndTime"@en ;
@@ -621,8 +611,7 @@ range: spatial region or site (immaterial continuant)
 
 
 ###  http://purl.obolibrary.org/obo/RO_0001025
-<http://purl.obolibrary.org/obo/RO_0001025> rdf:type owl:ObjectProperty ,
-                                                     owl:TransitiveProperty ;
+<http://purl.obolibrary.org/obo/RO_0001025> rdf:type owl:ObjectProperty ;
                                             rdfs:domain <http://purl.obolibrary.org/obo/BFO_0000004> ;
                                             rdfs:range <http://purl.obolibrary.org/obo/BFO_0000004> ;
                                             <http://purl.obolibrary.org/obo/IAO_0000112> "this rat is located in this cage"@en ;
@@ -731,7 +720,6 @@ range: spatial region or site (immaterial continuant)
 ###  http://purl.obolibrary.org/obo/RO_0002230
 <http://purl.obolibrary.org/obo/RO_0002230> rdf:type owl:ObjectProperty ;
                                             rdfs:subPropertyOf <http://purl.obolibrary.org/obo/BFO_0000051> ;
-                                            rdf:type owl:TransitiveProperty ;
                                             <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000125> ;
                                             <http://www.geneontology.org/formats/oboInOwl#created_by> "Chris Mungall" ;
                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "finished by" ;
@@ -868,8 +856,7 @@ However, this is not possible in OWL. We instead make this relation a sub-relati
                                             <http://purl.obolibrary.org/obo/IAO_0000112> "gland SubClassOf 'has part structure that is capable of' some 'secretion by cell'" ;
                                             <http://purl.obolibrary.org/obo/IAO_0000115> "s 'has part structure that is capable of' p if and only if there exists some part x such that s 'has part' x and x 'capable of' p" ;
                                             <http://www.geneontology.org/formats/oboInOwl#created_by> "Chris Mungall" ;
-                                            rdfs:label "has part structure that is capable of" ;
-                                            :_000131 "true"^^xsd:boolean .
+                                            rdfs:label "has part structure that is capable of" .
 
 
 ###  http://purl.obolibrary.org/obo/RO_0003000
@@ -1146,6 +1133,126 @@ However, this is not possible in OWL. We instead make this relation a sub-relati
          rdfs:label "has native range"@en .
 
 
+###  https://w3id.org/inbio#affects
+:affects rdf:type owl:ObjectProperty ;
+         rdfs:domain :_000140 ;
+         rdfs:range :_000141 ;
+         rdfs:comment "General influence or effect on ecological or biological systems." ;
+         rdfs:label "affects"@en .
+
+
+###  https://w3id.org/inbio#analyzes
+:analyzes rdf:type owl:ObjectProperty ;
+          rdfs:domain :_000157 ;
+          rdfs:range :_000158 ;
+          rdfs:comment "Conducts a detailed examination of the elements or structure of something." ;
+          rdfs:label "analyzes"@en .
+
+
+###  https://w3id.org/inbio#displaces
+:displaces rdf:type owl:ObjectProperty ;
+           rdfs:domain :_000138 ;
+           rdfs:range :_000139 ;
+           rdfs:comment "Refers to the process of pushing out or replacing one species or ecological component by another." ;
+           rdfs:label "displaces"@en .
+
+
+###  https://w3id.org/inbio#disrupts
+:disrupts rdf:type owl:ObjectProperty ;
+          rdfs:domain :_000159 ;
+          rdfs:range :_000160 ;
+          rdfs:comment "Interrupts by causing a disturbance or problem." ;
+          rdfs:label "disrupts"@en .
+
+
+###  https://w3id.org/inbio#drives
+:drives rdf:type owl:ObjectProperty ;
+        rdfs:domain :_000153 ;
+        rdfs:range :_000154 ;
+        rdfs:comment "Causes or motivates a change or process." ;
+        rdfs:label "drives"@en .
+
+
+###  https://w3id.org/inbio#enhances
+:enhances rdf:type owl:ObjectProperty ;
+          rdfs:domain :_000144 ;
+          rdfs:range :_000145 ;
+          rdfs:comment "Improves or augments a particular ecological or biological property or process." ;
+          rdfs:label "enhances"@en .
+
+
+###  https://w3id.org/inbio#examines
+:examines rdf:type owl:ObjectProperty ;
+          rdfs:domain :_000146 ;
+          rdfs:range :_000147 ;
+          rdfs:comment "Studies or investigates a subject or area in detail." ;
+          rdfs:label "examines"@en .
+
+
+###  https://w3id.org/inbio#experiences
+:experiences rdf:type owl:ObjectProperty ;
+             rdfs:domain :_000142 ;
+             rdfs:range :_000143 ;
+             rdfs:comment "Indicates undergoing or being subjected to a particular process or condition." ;
+             rdfs:label "experiences"@en .
+
+
+###  https://w3id.org/inbio#facilitates
+:facilitates rdf:type owl:ObjectProperty ;
+             rdfs:domain :_000167 ;
+             rdfs:range :_000168 ;
+             rdfs:comment "Makes an action or process easy or easier." ;
+             rdfs:label "facilitates"@en .
+
+
+###  https://w3id.org/inbio#hosts
+:hosts rdf:type owl:ObjectProperty ;
+       rdfs:range :_000005 ;
+       rdfs:comment "Acts as a host for other organisms, often referring to invasive species." ;
+       rdfs:domain "" ;
+       rdfs:label "hosts"@en .
+
+
+###  https://w3id.org/inbio#impacts
+:impacts rdf:type owl:ObjectProperty ;
+         rdfs:domain :_000136 ;
+         rdfs:range :_000137 ;
+         rdfs:comment "Describes significant effects on ecosystems or species." ;
+         rdfs:label "impacts"@en .
+
+
+###  https://w3id.org/inbio#influences
+:influences rdf:type owl:ObjectProperty ;
+            rdfs:domain :_000134 ;
+            rdfs:range :_000135 ;
+            rdfs:comment "Influences biological or ecological processes." ;
+            rdfs:label "influences"@en .
+
+
+###  https://w3id.org/inbio#provides
+:provides rdf:type owl:ObjectProperty ;
+          rdfs:domain :_000171 ;
+          rdfs:range :_000172 ;
+          rdfs:comment "Makes available for use; supplies." ;
+          rdfs:label "provides"@en .
+
+
+###  https://w3id.org/inbio#quantifies
+:quantifies rdf:type owl:ObjectProperty ;
+            rdfs:domain :_000165 ;
+            rdfs:range :_000166 ;
+            rdfs:comment "Measures or expresses as a quantity." ;
+            rdfs:label "quantifies"@en .
+
+
+###  https://w3id.org/inbio#reduces
+:reduces rdf:type owl:ObjectProperty ;
+         rdfs:domain :_000151 ;
+         rdfs:range :_000152 ;
+         rdfs:comment "Decreases in size, number, or extent." ;
+         rdfs:label "reduces"@en .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -1157,8 +1264,7 @@ However, this is not possible in OWL. We instead make this relation a sub-relati
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A relation between a scalar measurement data item and a number that quantifies it." ;
                                              <http://purl.obolibrary.org/obo/IAO_0000116> "The range should probably not be restricted to \"float\". It makes sense to set it to \"real\". However we do not know how this change will affect SPARQL queries, so we have left the range as-is for now." ;
                                              <http://purl.obolibrary.org/obo/IAO_0000412> "http://purl.obolibrary.org/obo/obi.owl" ;
-                                             rdfs:label "has measurement value"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "has measurement value"@en .
 
 
 ###  https://w3id.org/inbio#_000095
@@ -4378,8 +4484,7 @@ One question is whether this class encompasses fiat parts of islands."""@en ;
                                                <http://www.geneontology.org/formats/oboInOwl#created_by> "Josh Hanna"@en ,
                                                                                                          "William R. Hogan"@en ;
                                                rdfs:comment "latitude and longitude are key subtypes"@en ;
-                                               rdfs:label "geodetic coordinate measurement datum"@en ;
-                                               :_000131 "true"^^xsd:boolean .
+                                               rdfs:label "geodetic coordinate measurement datum"@en .
 
 
 ###  http://purl.obolibrary.org/obo/GEO_000000788
@@ -4393,16 +4498,14 @@ Date accessed: 2015-04-13"""@en ;
                                                <http://www.geneontology.org/formats/oboInOwl#created_by> "Josh Hanna"@en ,
                                                                                                          "William R. Hogan"@en ;
                                                rdfs:comment "Every latitude and longitude measurement is with respect to a geodetic datum.  Most common ones in use are NAD83 and WGS84."@en ;
-                                               rdfs:label "geodetic datum"@en ;
-                                               :_000131 "true"^^xsd:boolean .
+                                               rdfs:label "geodetic datum"@en .
 
 
 ###  http://purl.obolibrary.org/obo/GEO_000000789
 <http://purl.obolibrary.org/obo/GEO_000000789> rdf:type owl:Class ;
                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000003> ;
                                                <http://purl.obolibrary.org/obo/IAO_0000111> "planar angular measurement unit label"@en ;
-                                               rdfs:label "plane angle measurement unit label"@en ;
-                                               :_000131 "true"^^xsd:boolean .
+                                               rdfs:label "plane angle measurement unit label"@en .
 
 
 ###  http://purl.obolibrary.org/obo/GO_0000003
@@ -4448,7 +4551,6 @@ Date accessed: 2015-04-13"""@en ;
                                                                                      ) ;
                                                                   rdf:type owl:Class
                                                                 ] ;
-                                            rdfs:subClassOf :_000025 ;
                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "biological process" ,
                                                                                                            "physiological process" ;
                                             <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "single organism process" ,
@@ -4511,8 +4613,7 @@ of this, different, term."""@en ,
                                              <http://purl.obolibrary.org/obo/IAO_0000412> "http://purl.obolibrary.org/obo/obi.owl" ;
                                              <http://www.geneontology.org/formats/oboInOwl#created_by> "PERSON: Alan Ruttenberg"@en ,
                                                                                                        "PERSON: Melanie Courtot"@en ;
-                                             rdfs:label "measurement unit label"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "measurement unit label"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000009
@@ -4527,24 +4628,21 @@ of this, different, term."""@en ,
 """ ;
                                              <http://purl.obolibrary.org/obo/IAO_0000412> "http://purl.obolibrary.org/obo/obi.owl" ;
                                              <http://www.geneontology.org/formats/oboInOwl#created_by> "GROUP: IAO"@en ;
-                                             rdfs:label "data item label"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "data item label"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000027
 <http://purl.obolibrary.org/obo/IAO_0000027> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000030> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "a data item is an information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements."@en ;
-                                             rdfs:label "data item"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "data item"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000030
 <http://purl.obolibrary.org/obo/IAO_0000030> rdf:type owl:Class ;
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/BFO_0000031> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A generically dependent continuant that is about some thing."@en ;
-                                             rdfs:label "information content entity"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "information content entity"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000032
@@ -4560,8 +4658,7 @@ this case we explicitly refer to the singular form"""@en ,
                                              <http://purl.obolibrary.org/obo/IAO_0000412> "http://purl.obolibrary.org/obo/obi.owl" ;
                                              <http://www.geneontology.org/formats/oboInOwl#created_by> "PERSON: Alan Ruttenberg"@en ,
                                                                                                        "PERSON: Melanie Courtot"@en ;
-                                             rdfs:label "scalar measurement datum"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "scalar measurement datum"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000078
@@ -4575,8 +4672,7 @@ this case we explicitly refer to the singular form"""@en ,
                                                                                           "OBI_0000266"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/envo.owl> ;
                                              <http://www.geneontology.org/formats/oboInOwl#created_by> "PERSON:Bill Bug"@en ;
-                                             rdfs:label "curation status specification"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "curation status specification"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000102
@@ -4584,8 +4680,7 @@ this case we explicitly refer to the singular form"""@en ,
                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/IAO_0000027> ;
                                              <http://purl.obolibrary.org/obo/IAO_0000115> "data about an ontology part is a data item about a part of an ontology, for example a term"@en ;
                                              <http://www.geneontology.org/formats/oboInOwl#created_by> "Person:Alan Ruttenberg" ;
-                                             rdfs:label "data about an ontology part"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "data about an ontology part"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000109
@@ -4600,8 +4695,7 @@ this case we explicitly refer to the singular form"""@en ,
                                                                                           "group:OBI"@en ;
                                              <http://purl.obolibrary.org/obo/IAO_0000412> "http://purl.obolibrary.org/obo/obi.owl" ;
                                              <http://www.geneontology.org/formats/oboInOwl#created_by> "person:Chris Stoeckert"@en ;
-                                             rdfs:label "measurement datum"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "measurement datum"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000225
@@ -4622,8 +4716,7 @@ this case we explicitly refer to the singular form"""@en ,
                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/envo.owl> ;
                                              <http://www.geneontology.org/formats/oboInOwl#created_by> "PERSON: Alan Ruttenberg"@en ,
                                                                                                        "PERSON: Melanie Courtot"@en ;
-                                             rdfs:label "obsolescence reason specification"@en ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "obsolescence reason specification"@en .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000409
@@ -4640,8 +4733,7 @@ this case we explicitly refer to the singular form"""@en ,
                                              <http://purl.obolibrary.org/obo/IAO_0000119> "Barry Smith, Werner Ceusters" ;
                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/envo.owl> ;
                                              <http://www.geneontology.org/formats/oboInOwl#created_by> "Alan Ruttenberg" ;
-                                             rdfs:label "denotator type" ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "denotator type" .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_8000000
@@ -4652,8 +4744,7 @@ this case we explicitly refer to the singular form"""@en ,
                                              <http://purl.obolibrary.org/obo/IAO_0000232> "This class and it's subclasses are applied to OWL ontologies. Using an rdf:type triple will result in problems with OWL-DL. I propose that dcterms:type is instead used to connect an ontology URI with a class from this hierarchy. The class hierarchy is not disjoint, so multiple assertions can be made about a single ontology." ;
                                              <http://www.geneontology.org/formats/oboInOwl#created_by> "cjm" ;
                                              <http://www.geneontology.org/formats/oboInOwl#creation_date> "2018-05-20T20:55:03Z"^^xsd:dateTime ;
-                                             rdfs:label "ontology module" ;
-                                             :_000131 "true"^^xsd:boolean .
+                                             rdfs:label "ontology module" .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_8000001
@@ -7318,8 +7409,7 @@ No imports""" ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "TOTNUM" ;
                                               rdfs:label "total number" ;
                                               <http://www.w3.org/2004/02/skos/core#definition> "A measurement of the total number of entities." ,
-                                                                                               "The determination of the amount of total number of entities." ;
-                                              :_000132 "CL509779" .
+                                                                                               "The determination of the amount of total number of entities." .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_C153298
@@ -7400,8 +7490,7 @@ No imports""" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P106> "Qualitative Concept" ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "individual trait" ;
                                               rdfs:label "organism characteristic" ;
-                                              <http://www.w3.org/2004/02/skos/core#definition> "A characteristic or attribute inherent or inherited to an organism." ;
-                                              :_000132 "CL1405330" .
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A characteristic or attribute inherent or inherited to an organism." .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_C171088
@@ -7426,8 +7515,7 @@ No imports""" ;
                                                                                                              "population group property" ,
                                                                                                              "population group trait" ;
                                               rdfs:label "population group characteristic" ;
-                                              <http://www.w3.org/2004/02/skos/core#definition> "A characteristic or attribute of a population group." ;
-                                              :_000132 "CL1405325" .
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A characteristic or attribute of a population group." .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_C178428
@@ -7438,8 +7526,7 @@ No imports""" ;
                                               <http://purl.obolibrary.org/obo/NCIT_P106> "Geographic Area" ;
                                               <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "urban" ;
                                               rdfs:label "urbanized area" ;
-                                              <http://www.w3.org/2004/02/skos/core#definition> "A delineated geographic area encompassing residential, commercial, and other non-residential urban land uses with a residential population of 50,000 or more people and a density of 1,000 people or more per square mile." ;
-                                              :_000132 "CL1648151" .
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A delineated geographic area encompassing residential, commercial, and other non-residential urban land uses with a residential population of 50,000 or more people and a density of 1,000 people or more per square mile." .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_C178430
@@ -7667,9 +7754,7 @@ No imports""" ;
                                                                                                             "cyclic" ,
                                                                                                             "cylical" ;
                                              rdfs:label "cycle" ;
-                                             <http://www.w3.org/2004/02/skos/core#definition> "An event or sequence of events that constitute a round or succession of observable phenomena, recurring usually at regular or approximately regular time intervals and in the same sequence." ;
-                                             :_000130 <http://purl.obolibrary.org/obo/NCIT_C17998> ,
-                                                      <http://purl.obolibrary.org/obo/NCIT_C48660> .
+                                             <http://www.w3.org/2004/02/skos/core#definition> "An event or sequence of events that constitute a round or succession of observable phenomena, recurring usually at regular or approximately regular time intervals and in the same sequence." .
 
 
 ###  http://purl.obolibrary.org/obo/NCIT_C25499
@@ -9011,7 +9096,7 @@ No imports""" ;
 
 ###  https://w3id.org/inbio#_000051
 :_000051 rdf:type owl:Class ;
-         rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C45293> ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C20181> ;
          owl:disjointWith :_000053 ;
          <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "indigenous species" ;
          rdfs:label "native species" ;
@@ -9456,40 +9541,353 @@ No imports""" ;
          <http://www.w3.org/2004/02/skos/core#definition> "Genetic diversity is the total number of genetic characteristics in the genetic makeup of a species, it ranges widely from the number of species to differences within species and can be attributed to the span of survival for a species. It is distinguished from genetic variability, which describes the tendency of genetic characteristics to vary." .
 
 
+###  https://w3id.org/inbio#_000134
+:_000134 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :influences ;
+                               owl:someValuesFrom :_000135
+                             ] ;
+         rdfs:subClassOf :_000042 ;
+         rdfs:label "invasion rate"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Invasion rate refers to the speed or frequency at which an invasive species spreads into new areas within a given time frame. It is a critical measure in invasion biology to assess the potential impact and management needs of invasive species." .
+
+
+###  https://w3id.org/inbio#_000135
+:_000135 rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0008150> ;
+         rdfs:label "population dynamics"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Population dynamics in invasion biology refers to the study of how invasive species populations change over time and space, affected by births, deaths, and migration rates." .
+
+
+###  https://w3id.org/inbio#_000136
+:_000136 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :impacts ;
+                               owl:someValuesFrom :_000137
+                             ] ;
+         rdfs:subClassOf :_000022 ;
+         rdfs:label "generalist herbivore"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "A generalist herbivore is an organism that feeds on a wide variety of plant species, rather than specializing in a particular type of plant. In the context of invasion biology, generalist herbivores can have significant impacts on ecosystems by consuming native and non-native plant species, potentially facilitating the spread of invasive plants." .
+
+
+###  https://w3id.org/inbio#_000137
+:_000137 rdf:type owl:Class ;
+         rdfs:subClassOf :_000088 ;
+         rdfs:label "ecosystem dynamics"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Ecosystem dynamics cover the changes and processes within ecosystems driven by both native and invasive species, including nutrient flows and energy cycles." .
+
+
+###  https://w3id.org/inbio#_000138
+:_000138 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :displaces ;
+                               owl:someValuesFrom :_000139
+                             ] ;
+         rdfs:subClassOf :_000005 ;
+         rdfs:label "invasive weed"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "An invasive weed is a type of plant that is not native to a specific location and has a tendency to spread, which can cause damage to the environment, human economy, or human health." .
+
+
+###  https://w3id.org/inbio#_000139
+:_000139 rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/ENVO_01001305> ;
+         rdfs:label "native vegetation"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Native vegetation refers to plant species that are indigenous to a region, playing a critical role in maintaining ecological balance and resisting invasive species." .
+
+
+###  https://w3id.org/inbio#_000140
+:_000140 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :affects ;
+                               owl:someValuesFrom :_000141
+                             ] ;
+         rdfs:subClassOf <http://cerrado.linkeddata.es/ecology/ccon#ComunityDynamics> ,
+                         :_000005 ;
+         rdfs:label "biotic acceptance"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Biotic acceptance is a concept in invasion biology that suggests that ecosystems with high native species diversity are more likely to accept invasive species, as opposed to resisting them." .
+
+
+###  https://w3id.org/inbio#_000141
+:_000141 rdf:type owl:Class ;
+         rdfs:subClassOf <http://cerrado.linkeddata.es/ecology/ccon#Biodiversity> ;
+         rdfs:label "native biodiversity"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Native biodiversity in invasion biology refers to the variety and variability of native species within an ecological community, crucial for ecosystem resilience and stability." .
+
+
+###  https://w3id.org/inbio#_000142
+:_000142 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :experiences ;
+                               owl:someValuesFrom :_000143
+                             ] ;
+         rdfs:subClassOf :_000046 ;
+         rdfs:label "original community"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Original community refers to the assemblage of native species and their interactions within a specific ecosystem prior to the introduction of alien species." .
+
+
+###  https://w3id.org/inbio#_000143
+:_000143 rdf:type owl:Class ;
+         rdfs:subClassOf :_000088 ;
+         rdfs:label "ecological disruption"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Ecological disruption involves significant changes to ecosystem structure and function due to invasive species, leading to loss of biodiversity and altered ecosystem services." .
+
+
+###  https://w3id.org/inbio#_000144
+:_000144 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :enhances ;
+                               owl:someValuesFrom :_000145
+                             ] ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C45293> ;
+         rdfs:label "detritivore"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "A detritivore is an organism that feeds on dead organic material, particularly plant detritus, playing a crucial role in the decomposition process and nutrient cycling within ecosystems." .
+
+
+###  https://w3id.org/inbio#_000145
+:_000145 rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/ENVO_02500031> ;
+         rdfs:label "nutrient cycling"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Nutrient cycling examines how invasive species can alter the rates of nutrient intake, recycling, and distribution within an ecosystem." .
+
+
+###  https://w3id.org/inbio#_000146
+:_000146 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :examines ;
+                               owl:someValuesFrom :_000147
+                             ] ;
+         rdfs:subClassOf :_000064 ;
+         rdfs:label "invasion biology"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Invasion biology is the study of the causes and consequences of the introduction of species to new environments, where they establish, spread, and have impacts on native ecosystems and biodiversity." .
+
+
+###  https://w3id.org/inbio#_000147
+:_000147 rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/ENVO_01000203> ;
+         rdfs:label "pathways of species introduction"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Pathways of species introduction are the routes through which non-native species are introduced into new environments, including natural dispersal and human-related activities." .
+
+
+###  https://w3id.org/inbio#_000148
+:_000148 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :affects ;
+                               owl:someValuesFrom :_000149
+                             ] ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/ENVO_01000203> ;
+         rdfs:label "fire frequency"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Fire frequency refers to the rate at which fires occur in a given area over a specified period of time. In the context of invasion biology, it is an important factor influencing the dynamics of ecosystems, particularly in how it affects the establishment and spread of invasive species." .
+
+
+###  https://w3id.org/inbio#_000149
+:_000149 rdf:type owl:Class ;
+         rdfs:subClassOf :_000044 ;
+         rdfs:label "species survival"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Species survival in invasion biology refers to the capability of native or invasive species to maintain populations under environmental pressures and competitive interactions." .
+
+
+###  https://w3id.org/inbio#_000150
+:_000150 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :affects ;
+                               owl:someValuesFrom :_000051
+                             ] ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C25499> ;
+         rdfs:label "invasion event"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "An invasion event refers to the occurrence of a species entering and establishing itself in a new ecosystem, potentially causing ecological impacts." .
+
+
+###  https://w3id.org/inbio#_000151
+:_000151 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :reduces ;
+                               owl:someValuesFrom :_000152
+                             ] ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C25548> ,
+                         :_000040 ;
+         rdfs:label "manual removal"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Manual removal refers to the physical extraction of invasive species by human effort, often used as a management strategy in invasion biology to control or eradicate non-native species from an ecosystem." .
+
+
+###  https://w3id.org/inbio#_000152
+:_000152 rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/PCO_0000001> ;
+         rdfs:label "invasive species populations"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Invasive species populations in invasion biology refer to the groups of non-native organisms that establish, proliferate, and expand across new territories, often impacting local ecosystems." .
+
+
+###  https://w3id.org/inbio#_000153
+:_000153 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :drives ;
+                               owl:someValuesFrom :_000154
+                             ] ;
+         rdfs:subClassOf :_000088 ;
+         rdfs:label "dominance"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Dominance refers to the ability of an invasive species to exert control over a community by outcompeting native species for resources, thereby altering community dynamics and ecosystem processes." .
+
+
+###  https://w3id.org/inbio#_000154
+:_000154 rdf:type owl:Class ;
+         rdfs:subClassOf :_000088 ;
+         rdfs:label "native species decline"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Native species decline in invasion biology examines the decrease in native species populations due to factors such as habitat loss, competition from invasive species, and environmental changes." .
+
+
+###  https://w3id.org/inbio#_000155
+:_000155 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :_000115 ;
+                               owl:someValuesFrom :_000156
+                             ] ;
+         rdfs:subClassOf <http://cerrado.linkeddata.es/ecology/ccon#ComunityDynamics> ,
+                         :_000021 ;
+         rdfs:label "community resilience"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Community resilience refers to the ability of a community of organisms to withstand, recover, and adapt to the impacts of invasive species, maintaining its structure, function, and dynamics." .
+
+
+###  https://w3id.org/inbio#_000156
+:_000156 rdf:type owl:Class ;
+         rdfs:subClassOf :_000019 ;
+         rdfs:label "ecosystem stability"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Ecosystem stability in invasion biology refers to the ability of an ecosystem to maintain its structure and function in the face of external stressors, including the introduction and spread of invasive species." .
+
+
+###  https://w3id.org/inbio#_000157
+:_000157 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :analyzes ;
+                               owl:someValuesFrom :_000158
+                             ] ;
+         rdfs:subClassOf :_000046 ,
+                         :_000146 ;
+         rdfs:label "community study"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "A community study refers to the examination and analysis of the interactions, dynamics, and characteristics of a community of organisms, particularly focusing on the impact and role of invasive species within that community." .
+
+
+###  https://w3id.org/inbio#_000158
+:_000158 rdf:type owl:Class ;
+         rdfs:subClassOf :_000088 ;
+         rdfs:label "species interactions"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Species interactions in invasion biology involve the various ways species influence each other within an ecosystem, including competition, predation, parasitism, and mutualism, which can be significantly altered by invasive species." .
+
+
+###  https://w3id.org/inbio#_000159
+:_000159 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :disrupts ;
+                               owl:someValuesFrom :_000160
+                             ] ;
+         rdfs:subClassOf :_000064 ;
+         rdfs:label "invasion process"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "The invasion process refers to the sequence of events and mechanisms through which non-native species establish, spread, and impact new environments, often leading to ecological changes." .
+
+
+###  https://w3id.org/inbio#_000160
+:_000160 rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/ENVO_01001110> ;
+         rdfs:label "local ecosystems"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Local ecosystems in invasion biology refer to specific ecological communities within a defined geographical area, each with unique interactions and susceptibilities to the impacts of invasive species." .
+
+
+###  https://w3id.org/inbio#_000161
+:_000161 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :displaces ;
+                               owl:someValuesFrom :_000051
+                             ] ;
+         rdfs:subClassOf :_000005 ;
+         rdfs:label "invasive plant"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "An invasive plant is a species of plant that is not native to a specific location and has a tendency to spread, which can cause damage to the environment, human economy, or human health." .
+
+
+###  https://w3id.org/inbio#_000162
+:_000162 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :influences ;
+                               owl:someValuesFrom :_000163
+                             ] ;
+         rdfs:subClassOf :_000068 ,
+                         :_000069 ;
+         rdfs:label "host availability"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Host availability refers to the presence and accessibility of suitable hosts for a species, particularly in the context of invasive species and their ability to establish and spread in a new environment." .
+
+
+###  https://w3id.org/inbio#_000163
+:_000163 rdf:type owl:Class ;
+         rdfs:subClassOf :_000050 ;
+         rdfs:label "species distribution"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Species distribution in invasion biology studies the geographical spread of species, particularly how invasive species expand beyond their native ranges, influencing biodiversity and ecosystem structure." .
+
+
+###  https://w3id.org/inbio#_000164
+:_000164 rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/ENVO_01000951> ;
+         rdfs:label "native ecosystems"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Native ecosystems in invasion biology are those ecosystems that have developed naturally without human intervention and are characterized by well-established native species populations and ecological processes." .
+
+
+###  https://w3id.org/inbio#_000165
+:_000165 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :quantifies ;
+                               owl:someValuesFrom :_000166
+                             ] ;
+         rdfs:subClassOf <http://cerrado.linkeddata.es/ecology/ccon#SpeciesRichness> ;
+         rdfs:label "species number"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Species number refers to the count of distinct species present in a given area or ecosystem, often used as a measure of biodiversity and an indicator of ecological health, particularly in the context of invasion biology where it can reflect the impact of invasive species on native biodiversity." .
+
+
+###  https://w3id.org/inbio#_000166
+:_000166 rdf:type owl:Class ;
+         rdfs:subClassOf :_000043 ;
+         rdfs:label "ecosystem diversity"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "The diversity of ecosystems refers to the range of different ecosystems found within a specific geographic area, each with unique structures, species compositions, and ecological functions, which can be impacted variably by invasive species." .
+
+
+###  https://w3id.org/inbio#_000167
+:_000167 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :facilitates ;
+                               owl:someValuesFrom :_000168
+                             ] ;
+         rdfs:subClassOf <http://cerrado.linkeddata.es/ecology/ccon#ComunityDynamics> ,
+                         :_000033 ;
+         rdfs:label "mutualistic interaction"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "A mutualistic interaction is a type of symbiosis where two or more species interact in a way that is beneficial to all involved parties. In the context of invasion biology, mutualistic interactions can influence the success and impact of invasive species by providing them with advantages such as increased resources, protection, or dispersal opportunities." .
+
+
+###  https://w3id.org/inbio#_000168
+:_000168 rdf:type owl:Class ;
+         rdfs:subClassOf <http://cerrado.linkeddata.es/ecology/ccon#ComunityDynamics> ;
+         rdfs:label "species coexistence"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Species coexistence in invasion biology examines how different species live together in the same habitat, focusing on the mechanisms that enable competing species to coexist and how these mechanisms are disrupted by invasive species." .
+
+
+###  https://w3id.org/inbio#_000171
+:_000171 rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :provides ;
+                               owl:someValuesFrom :_000172
+                             ] ;
+         rdfs:subClassOf :_000064 ;
+         rdfs:label "invasion pattern"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Invasion pattern refers to the specific sequence or manner in which an invasive species spreads and establishes itself in a new environment. It encompasses the stages of introduction, establishment, and spread, and is influenced by various ecological, biological, and environmental factors." .
+
+
+###  https://w3id.org/inbio#_000172
+:_000172 rdf:type owl:Class ;
+         rdfs:subClassOf <http://purl.obolibrary.org/obo/GO_0008150> ;
+         rdfs:label "dispersal mechanisms"@en ;
+         <http://www.w3.org/2004/02/skos/core#definition> "Insight into dispersal mechanisms in invasion biology involves understanding the various ways invasive species spread across landscapes, including natural dispersal processes like wind and water, and anthropogenic factors such as global trade." .
+
+
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://purl.obolibrary.org/obo/IAO_0000002
-<http://purl.obolibrary.org/obo/IAO_0000002> rdf:type owl:NamedIndividual .
-
-
 ###  http://purl.obolibrary.org/obo/IAO_0000103
 <http://purl.obolibrary.org/obo/IAO_0000103> rdf:type owl:NamedIndividual .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000120
-<http://purl.obolibrary.org/obo/IAO_0000120> rdf:type owl:NamedIndividual .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000121
-<http://purl.obolibrary.org/obo/IAO_0000121> rdf:type owl:NamedIndividual .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000122
-<http://purl.obolibrary.org/obo/IAO_0000122> rdf:type owl:NamedIndividual .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000123
-<http://purl.obolibrary.org/obo/IAO_0000123> rdf:type owl:NamedIndividual .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000124
-<http://purl.obolibrary.org/obo/IAO_0000124> rdf:type owl:NamedIndividual .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000125
-<http://purl.obolibrary.org/obo/IAO_0000125> rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000224
@@ -9522,10 +9920,6 @@ No imports""" ;
 
 ###  http://purl.obolibrary.org/obo/IAO_0000421
 <http://purl.obolibrary.org/obo/IAO_0000421> rdf:type owl:NamedIndividual .
-
-
-###  http://purl.obolibrary.org/obo/IAO_0000423
-<http://purl.obolibrary.org/obo/IAO_0000423> rdf:type owl:NamedIndividual .
 
 
 ###  http://purl.obolibrary.org/obo/IAO_0000428
@@ -9567,28 +9961,6 @@ No imports""" ;
                 <http://purl.obolibrary.org/obo/BFO_0000020>
                 <http://purl.obolibrary.org/obo/BFO_0000031>
               )
-] .
-
-
-[ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( <http://purl.obolibrary.org/obo/IAO_0000120>
-                        <http://purl.obolibrary.org/obo/IAO_0000121>
-                        <http://purl.obolibrary.org/obo/IAO_0000122>
-                        <http://purl.obolibrary.org/obo/IAO_0000123>
-                        <http://purl.obolibrary.org/obo/IAO_0000124>
-                        <http://purl.obolibrary.org/obo/IAO_0000125>
-                        <http://purl.obolibrary.org/obo/IAO_0000423>
-                        <http://purl.obolibrary.org/obo/IAO_0000428>
-                      )
-] .
-
-
-[ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( <http://purl.obolibrary.org/obo/IAO_0000226>
-                        <http://purl.obolibrary.org/obo/IAO_0000227>
-                        <http://purl.obolibrary.org/obo/IAO_0000228>
-                        <http://purl.obolibrary.org/obo/IAO_0000229>
-                      )
 ] .
 
 
